@@ -1,0 +1,19 @@
+model:
+  window_size: 14
+  kernel_size: 10
+  num_features: 3
+  num_filters: 5
+  num_hidden_state_features: 10
+  num_lstm_layers: 5
+
+train:
+  learning_rate: 0.001
+  num_epochs: 500
+  batch_size: 32
+  train_test_split: [0.7, 0.15, 0.15]
+
+pretrain: "pretrain/save_state_dict.pth"
+
+data:
+  sp_500_path: "data/sp500_data.csv"
+

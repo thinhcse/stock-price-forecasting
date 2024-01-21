@@ -1,0 +1,18 @@
+name: stock-forecasting
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - numpy=1.26.3
+  - pandas=2.1.4
+  - pip=23.3.1
+  - plotly=5.9.0
+  - python=3.10.0
+  - pytorch=2.1.2
+  - pyyaml=6.0.1
+  - pip:
+      - beautifulsoup4==4.12.3
+      - bs4==0.0.2
+      - selenium==4.16.0
+      - torch-summary==1.4.5
+
