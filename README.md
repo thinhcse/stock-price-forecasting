@@ -1,4 +1,4 @@
-Stock price S&P500 index is examined in this project. Before running or training the model, you need to collect the S&P500 data. In this repo, I provide a small tool for crawling the data from [Yahoo](https://finance.yahoo.com/quote/%5EGSPC/history?period1=1136073600&period2=1624665600&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true) using Selenium and Beautiful Soup. Once success, the data will be located in folder "data/".
+Stock price S&P500 index is examined in this project. Before running or training the model, you need to collect the S&P500 data. In this repo, I provide a small tool for crawling the data from [Yahoo](https://finance.yahoo.com/quote/%5EGSPC/history?period1=1136073600&period2=1624665600&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true) using Selenium and Beautiful Soup. Once successful, the data will be located in folder "data/".
 
 1. Setup the environment with required packages and libraries using environment.yml (for running and training on CPU/GPU):
    ```
