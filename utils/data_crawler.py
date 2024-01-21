@@ -15,18 +15,18 @@ chrome_options = Options()
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
-driver = webdriver.Chrome('chromedriver',chrome_options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options)
 driver.get(url)
 
 key = 5655
 last_size = driver.execute_script("return document.documentElement.scrollHeight")
 while True:
   try:
-    element = driver.find_element_by_xpath(f'//*[@id="Col1-1-HistoricalDataTable-Proxy"]/section/div[2]/table/tbody/tr[{key}]/td[1]/span')
+    element = driver.find_element(By.XPATH, f'//*[@id="Col1-1-HistoricalDataTable-Proxy"]/section/div[2]/table/tbody/tr[{key}]/td[1]/span')
     break
   except:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
-    driver.find_element_by_tag_name('body').send_keys(Keys.END)
+    driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.END)
     time.sleep(2)
     new_size = driver.execute_script("return document.documentElement.scrollHeight")
     if new_size == last_size:
@@ -41,6 +41,7 @@ soup = BeautifulSoup(html_content, 'lxml')
 table = soup.find('table', attrs={'class': 'W(100%) M(0)'})
 table_header = table.thead.find_all('tr')
 table_data = table.tbody.find_all('tr')
+
 
 headings = []
 for th in table_header[0].find_all('th'):
