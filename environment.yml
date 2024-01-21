@@ -1,4 +1,4 @@
-name: stock-forecasting
+name: stock-price-forecasting
 channels:
   - pytorch
   - defaults
