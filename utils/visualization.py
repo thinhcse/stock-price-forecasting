@@ -11,8 +11,8 @@ def return_plot(model, data_test_iter, time_stamps_test, device, configs):
     groundtruths = []
     for input, groundtruth in data_test_iter:
         input = input.to(device)
-        groundtruth = groundtruth.to(device)
-        pred = model(input).ravel().detach().numpy()
+        groundtruth = groundtruth
+        pred = model(input).ravel().to('cpu').detach().numpy()
         preds.append(pred)
         groundtruths.append(groundtruth)
 
