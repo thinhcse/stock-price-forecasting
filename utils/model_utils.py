@@ -22,6 +22,7 @@ def train(model, data_train_iter, data_val_iter, device, configs):
   model.apply(init_weights)
   optimizer = optim.Adam(model.parameters(), lr=configs["train"]["learning_rate"])
   loss = nn.MSELoss()
+  model.to(device)
 
   print(f"___Start training on {device}___")
   tic = time.time()
