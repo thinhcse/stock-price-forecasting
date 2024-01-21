@@ -1,0 +1,1 @@
+Stock price S&P500 index is studied. Before running or training the model, you need to have the S&P500 data. In this repo, I provide small tool for crawling the data from [https://finance.yahoo.com/quote/%5EGSPC/history?period1=1136073600&period2=1624665600&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true] using Selinium and BeautifulSoup packages.
