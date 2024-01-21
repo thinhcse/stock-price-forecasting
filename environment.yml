@@ -13,6 +13,7 @@ dependencies:
       - torch==2.1.2
       - beautifulsoup4==4.12.3
       - bs4==0.0.2
+      - lxml==5.1.0
       - selenium==4.16.0
       - torch-summary==1.4.5
 
