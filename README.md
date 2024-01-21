@@ -14,7 +14,7 @@ Stock price S&P500 index is examined in this project. Before running or training
    python data_crawler.py
    cd ..
    ```
-   It needs time to download on the data. When finish, a successful message will be displayed.
+   It needs time to download all the data. When finish, a successful message will be displayed.
 4. Run the pretrained forecaster:
    ```
    python main.py
