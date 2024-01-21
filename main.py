@@ -39,4 +39,4 @@ if __name__ == "__main__":
     else:
         forecaster.load_state_dict(torch.load(configs["pretrain"]))
 
-    return_plot(forecaster, data_test_iter, time_stamps_test, configs)
+    return_plot(forecaster, data_test_iter, time_stamps_test, device, configs)
