@@ -6,7 +6,7 @@ import torch.optim as optim
 import time
 
 def test(model, data_test_iter, device):
-
+  model.to(device)
   test_loss = torch.tensor(0.0).to(device)
 
   for input, groundtruth in data_test_iter:
