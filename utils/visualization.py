@@ -1,14 +1,17 @@
-import pandas as pd
+eimport pandas as pd
 import numpy as np
 
 import plotly.express as px
 import plotly.graph_objects as go
 
-def return_plot(model, data_test_iter, time_stamps_test, configs):
+def return_plot(model, data_test_iter, time_stamps_test, device, configs):
+    model.to(device)
     times = time_stamps_test[configs["model"]["window_size"]:]
     preds = []
     groundtruths = []
     for input, groundtruth in data_test_iter:
+        input = input.to(device)
+        groundtruth = groundtruth.to(device)
         pred = model(input).ravel().detach().numpy()
         preds.append(pred)
         groundtruths.append(groundtruth)
