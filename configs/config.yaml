@@ -2,15 +2,15 @@ model:
   window_size: 14
   kernel_size: 10
   num_features: 3
-  num_filters: 5
-  num_hidden_state_features: 10
+  num_filters: 64
+  num_hidden_state_features: 32
   num_lstm_layers: 5
 
 train:
   learning_rate: 0.001
   num_epochs: 500
   batch_size: 32
-  train_test_split: [0.7, 0.15, 0.15]
+  train_test_split: [0.8, 0.1, 0.1]
 
 pretrain: "pretrain/save_state_dict.pth"
 
