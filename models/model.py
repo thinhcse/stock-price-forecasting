@@ -63,11 +63,12 @@ class model(nn.Module):
                       ))
         output = self.conv(output)
         output = F.avg_pool2d(output, kernel_size=(2, 1))
-        output = output.permute((0, 2, 1, -1)) #(batch, window_size, num_out_channel, remain)  
+        output = output.permute((0, 2, 1, -1)) #(batch, new_window_size (after_av_pool), num_out_channel, remain)  
         output = torch.flatten(output, start_dim=2, end_dim=3) #4D -> 3D to be used with lstm
         output = self.lstm(output)[0] #(h_n, cn)->hn -> feature_size = feature_size(hn)
         output = self.attention(output)[0] #values applied attention, attention weight -> take the first one
         output = torch.select(output, dim=1, index=-1) #get the last hidden state (with num_hidden_state_features)
+        #output = torch.flatten(output, start_dim=1, end_dim=2) #then fc1 input shape 7 * num_hidden_state_features
         output = self.fc1(output)
         output = self.fc2(output)
         return output

@@ -40,3 +40,6 @@ if __name__ == "__main__":
         forecaster.load_state_dict(torch.load(configs["pretrain"]))
 
     return_plot(forecaster, data_test_iter, time_stamps_test, device, configs)
+
+    x = next(iter(data_train_iter))
+    print(summary(forecaster, x[0]))
